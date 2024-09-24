@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ancestrail
 
-## Getting Started
+**Ancestrail** est une plateforme qui permet aux utilisateurs de créer, explorer et partager leur arbre généalogique. L'objectif est de faciliter la connexion des générations et la préservation de l'histoire familiale, en particulier dans le contexte du Cameroun.
 
-First, run the development server:
+## Technologies utilisées
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js** - Framework React pour les applications server-side et client-side.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[//]: # (- **Material-UI &#40;MUI&#41;** - Bibliothèque de composants UI pour React.)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+[//]: # (- **Axios** - Utilisé pour les requêtes API.)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[//]: # (- **Context API** - Gestion de l'état global pour les arbres publics.)
 
-## Learn More
+## Fonctionnalités
 
-To learn more about Next.js, take a look at the following resources:
+- **Création d'arbres généalogiques** : Créez et personnalisez votre arbre généalogique.
+- **Partage de souvenirs** : Ajoutez des photos, des anecdotes, et des documents à chaque arbre.
+- **Exploration des arbres publics** : Consultez les arbres généalogiques publics créés par d'autres utilisateurs.
+- **Livrets de récits** : Compilez les histoires et traditions familiales dans des livrets téléchargeables.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Démarrage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Prérequis
 
-## Deploy on Vercel
+- **Node.js** version 14+ doit être installé sur votre machine.
+- **npm** ou **yarn** installé.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clonez ce repository :
+   ```bash
+   git clone https://github.com/username/ancestrail.git
+   ```  

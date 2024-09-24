@@ -11,7 +11,7 @@ const pages = [
     { name: 'Accueil', path: '/' },
     { name: 'Ma famille', path: '/family' },
     { name: 'Galerie', path: '/galerie' },
-    { name: 'À Propos', path: '/aboutT' },
+    { name: 'À Propos', path: '/about' },
 ];
 
 export default function Header({ mode, toggleDarkMode, trees }) {
