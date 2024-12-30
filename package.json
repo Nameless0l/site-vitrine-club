@@ -1,5 +1,5 @@
 {
-  "name": "ancestrail",
+  "name": "clubgi",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,11 +12,15 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^6.1.1",
+    "@mui/lab": "^6.0.0-beta.20",
     "@mui/material": "^6.1.1",
     "axios": "^1.7.7",
+    "framer-motion": "^11.8.0",
+    "lucide-react": "^0.445.0",
     "next": "14.2.13",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "eslint": "^8",

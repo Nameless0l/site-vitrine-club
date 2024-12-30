@@ -1,96 +1,164 @@
 import React from 'react';
-import { Container, Typography, Box, Grid, Paper } from '@mui/material';
-import { AccountTree, Security, Speed, Devices } from '@mui/icons-material';
+import { Box, Typography, Grid, Avatar, Card, CardContent, Paper, Container } from '@mui/material';
+import { Code, Group, Lightbulb } from '@mui/icons-material';
 
-const AboutPage = () => {
-    const features = [
-        {
-            icon: <AccountTree />,
-            title: "Arbre généalogique numérique",
-            description: "Créez et gérez facilement votre arbre généalogique, en préservant l'histoire de votre famille pour les générations futures."
-        },
-        {
-            icon: <Security />,
-            title: "Sécurité et confidentialité",
-            description: "Vos données familiales sont protégées grâce à notre gestion sécurisée des accès et au chiffrement des informations sensibles."
-        },
-        {
-            icon: <Speed />,
-            title: "Performance optimisée",
-            description: "Profitez d'une expérience fluide, même avec de grands arbres généalogiques, grâce à nos temps de chargement optimisés."
-        },
-        {
-            icon: <Devices />,
-            title: "Compatibilité multiplateforme",
-            description: "Accédez à votre arbre généalogique depuis n'importe quel appareil grâce à notre application web responsive."
-        },
-    ];
 
-    return (
-        <Container maxWidth="lg">
-            <Box sx={{ my: 4 }}>
-                <Typography variant="h3" component="h2" gutterBottom sx={{ fontWeight: 'bold' }}>
-                    À Propos d'Ancestrail
-                </Typography>
-                <Typography variant="h5" align="justify" color="text.secondary">
-                    Préserver l'héritage culturel et renforcer les liens familiaux
-                </Typography>
-
-                <Box sx={{ my: 4 }}>
-                    <Typography variant="body1" align={"justify"}>
-                        <strong>Ancestrail</strong> est né de la volonté de préserver et de célébrer la riche histoire
-                        familiale du Cameroun.
-                        Créé par un groupe de jeunes étudiants passionnés de l'École Polytechnique de Yaoundé, notre
-                        plateforme est le fruit d'une collaboration
-                        entre des esprits créatifs et déterminés, désireux de reconnecter les générations.
-                    </Typography>
-                    <Typography variant="body1" align={"justify"}>
-                        Dans un monde en constante évolution, où l'urbanisation rapide et la modernisation peuvent
-                        parfois créer des distances entre les générations,
-                        <strong>Ancestrail</strong> vise à maintenir les liens intergénérationnels et à transmettre
-                        l'histoire familiale aux générations futures.
-                        Nous croyons fermement que chaque famille a une histoire unique à raconter, et notre mission est
-                        de faciliter cette exploration
-                        et cette documentation à travers des outils accessibles et intuitifs.
-                    </Typography>
-                </Box>
-
-                <Grid container spacing={4}>
-                    {features.map((feature, index) => (
-                        <Grid item xs={12} sm={6} md={3} key={index}>
-                            <Paper elevation={3} sx={{ p: 2, height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                                <Box sx={{ mb: 2, color: 'primary.main' }}>
-                                    {feature.icon}
-                                </Box>
-                                <Typography variant="h6" component="h3" gutterBottom>
-                                    {feature.title}
-                                </Typography>
-                                <Typography variant="body2">
-                                    {feature.description}
-                                </Typography>
-                            </Paper>
-                        </Grid>
-                    ))}
-                </Grid>
-
-                <Box sx={{ my: 4 }}>
-                    <Typography variant="h3" component="h2" gutterBottom>
-                        Notre Mission
-                    </Typography>
-                    <Typography variant="body1" >
-                        <strong>Ancestrail</strong> s'engage à fournir une plateforme intuitive et accessible à tous, quel que soit le niveau d'éducation
-                        ou de familiarité avec la technologie. Notre objectif est de vous aider à :
-                    </Typography>
-                    <ul>
-                        <li>Préserver l'héritage culturel de votre famille</li>
-                        <li>Renforcer les liens familiaux malgré la distance géographique</li>
-                        <li>Maintenir un sens de l'identité pour les générations futures</li>
-                        <li>Adapter la transmission de l'histoire familiale aux réalités de la société camerounaise moderne</li>
-                    </ul>
-                </Box>
-            </Box>
-        </Container>
-    );
+const aboutData = {
+  history: `
+    Le Club GI (Génie Informatique) de l'École Nationale Supérieure Polytechnique de Yaoundé est une communauté d'étudiants dédiée à l'innovation technologique 
+    et à l'excellence académique. Depuis sa création, le club a servi de plateforme pour explorer, 
+    apprendre et collaborer sur des projets informatiques.`,
+  mission: `
+    Promouvoir la maîtrise des technologies de l'information et de la communication parmi ses membres 
+    et préparer les futurs leaders du numérique.`,
+  values: [
+    {
+      icon: <Code fontSize="large" />,
+      title: "Apprendre",
+      description: "Nous visons l'excellence dans tous nos projets informatiques."
+    },
+    {
+      icon: <Group fontSize="large" />,
+      title: "Accomplir",
+      description: "La collaboration est au cœur de notre approche."
+    },
+    {
+      icon: <Lightbulb fontSize="large" />,
+      title: "Innover",
+      description: "Nous encourageons la créativité et les nouvelles idées."
+    }
+  ],
+  team: [
+    { name: 'John Doe', role: 'Président', image: '/path-to-image-1.jpg' },
+    { name: 'Jane Smith', role: 'Vice-présidente', image: '/path-to-image-2.jpg' },
+    { name: 'Alice Brown', role: 'Secrétaire générale', image: '/path-to-image-3.jpg' },
+    { name: 'Bob White', role: 'Responsable des projets', image: '/path-to-image-4.jpg' },
+  ],
 };
 
-export default AboutPage;
+const About = () => {
+  return (
+    <Container>
+
+    <Box sx={{ mt: 12, mb: 6, px: 3 }}>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          py: 4,
+          textAlign: 'center',
+        //   backgroundImage: 'linear-gradient(135deg, #003a6b 30%, #0071ff 90%)',
+        //   color: 'white',
+        }}
+      >
+        <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 2 }}>
+          À propos de nous
+        </Typography>
+        <Typography variant="h6" sx={{ maxWidth: 600, mx: 'auto', fontWeight: 300 }}>
+          Découvrez notre mission, notre histoire et les visages derrière le succès du Club GI.
+        </Typography>
+      </Box>
+
+      {/* Section Historique */}
+      <Box sx={{ py: 4, textAlign: 'center' }}>
+        <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
+          Notre Histoire
+        </Typography>
+        <Typography variant="body1" sx={{ maxWidth: 800, mx: 'auto', fontSize: '1.1rem', lineHeight: 1.8 }}>
+          {aboutData.history}
+        </Typography>
+      </Box>
+
+      {/* Section Mission et Valeurs */}
+      <Box
+          sx={{
+            py: 6,
+            px : 4,
+            textAlign: 'center',
+            borderRadius: 2,
+          }}
+        >
+          <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
+            Notre Mission et Nos Valeurs
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ maxWidth: 800, mx: 'auto', fontSize: '1.1rem', lineHeight: 1.8, mb: 4 }}
+          >
+            {aboutData.mission}
+          </Typography>
+          <Grid container spacing={4}>
+            {aboutData.values.map((value, index) => (
+              <Grid item xs={12} md={4} key={index}>
+                <Paper
+                  elevation={3}
+                  sx={{
+                    p: 3,
+                    height: '100%',
+                    textAlign: 'center',
+                    transition: 'transform 0.3s, box-shadow 0.3s',
+                    '&:hover': {
+                      transform: 'scale(1.05)',
+                      boxShadow: 6,
+                    },
+                  }}
+                >
+                  {value.icon}
+                  <Typography variant="h6" sx={{ my: 2 }}>
+                    {value.title}
+                  </Typography>
+                  <Typography>{value.description}</Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+      {/* Section Équipe */}
+      <Box sx={{ py: 8, textAlign: 'center' }}>
+          <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
+            Rencontrez notre équipe
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {aboutData.team.map((member, index) => (
+              <Grid item key={index} xs={12} sm={6} md={3}>
+                <Card
+                  sx={{
+                    textAlign: 'center',
+                    boxShadow: 3,
+                    transition: 'transform 0.3s, box-shadow 0.3s',
+                    '&:hover': {
+                      transform: 'scale(1.05)',
+                      boxShadow: 6,
+                    },
+                  }}
+                >
+                  <Avatar
+                    src={member.image}
+                    alt={member.name}
+                    sx={{
+                      width: 100,
+                      height: 100,
+                      mx: 'auto',
+                      mt: 3,
+                      mb: 2,
+                    }}
+                  />
+                  <CardContent>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                      {member.name}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: 'gray' }}>
+                      {member.role}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+    </Box>
+    </Container>
+  );
+};
+
+export default About;
