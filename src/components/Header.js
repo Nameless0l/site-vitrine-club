@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Box, Toolbar, IconButton, Typography, Button, Tooltip } from '@mui/material';
 import { Menu as MenuIcon, GitHub, LinkedIn, Brightness4, Brightness7 } from '@mui/icons-material';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header({ pages, toggleDarkMode, mode }) {
     return (
@@ -9,7 +10,7 @@ export default function Header({ pages, toggleDarkMode, mode }) {
                 : (theme) => theme.palette.background.paper, borderRadius: 0}}>
             <Toolbar sx={{ minHeight: 50 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <img
+                <Image
                     src="logo.png" 
                     alt="Logo"
                     style={{ width: 80, height: 60, marginRight: 16 }} 
